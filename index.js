@@ -28,6 +28,9 @@ async function getTasks() {
 }
 
 function generateHTML(tasks){
+  if(tasks.length === 0) {
+    return "<h1>No Pending Tasks</h1><p>All tasks are completed! 🎉</p>";
+  }
   let html = "<h1>Pending Tasks</h1><ul>";
   tasks.forEach((task) => {
     const props = task.properties;
